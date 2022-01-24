@@ -1,4 +1,4 @@
-name: "Install a binary from GitHub releases"
+name: "Install a binary from GitHub releases (marmorag)"
 description: "Install binaries from GitHub releases"
 author: "Lee Briggs"
 inputs:
@@ -10,7 +10,7 @@ inputs:
     default: latest
     required: true
 branding:
-  icon: 'archive'  
+  icon: 'archive'
   color: 'green'
 runs:
   using: 'node12'
