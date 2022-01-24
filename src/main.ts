@@ -88,11 +88,13 @@ async function run() {
             )
         }
 
-        const url = asset.browser_download_url
+        const url = asset.url
         const authString = `bearer ${token}`
 
         core.info(`Downloading ${project} from ${url}`)
-        const binPath = await tc.downloadTool(url, '', authString);
+        const binPath = await tc.downloadTool(url, '', authString, {
+            accept: "application/octet-stream"
+        });
         let extractedPath = await tc.extractTar(binPath);
         core.info(`Successfully extracted ${project} to ${extractedPath}`)
 
