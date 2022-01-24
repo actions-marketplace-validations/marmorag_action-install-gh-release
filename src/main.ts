@@ -89,9 +89,10 @@ async function run() {
         }
 
         const url = asset.browser_download_url
+        const authString = `bearer ${token}`
 
         core.info(`Downloading ${project} from ${url}`)
-        const binPath = await tc.downloadTool(url);
+        const binPath = await tc.downloadTool(url, '', authString);
         let extractedPath = await tc.extractTar(binPath);
         core.info(`Successfully extracted ${project} to ${extractedPath}`)
 
